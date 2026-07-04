@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Code2Conquer — Design System
+   Matte black + charcoal UI, metallic gold accents.
+   8px spacing grid, minimal + structured.
+   ============================================================ */
+
+@theme {
+  /* Color system */
+  --color-ink: #0d0d0d;        /* matte black background */
+  --color-surface: #1f1f1f;    /* charcoal surface */
+  --color-surface-2: #171717;  /* deeper surface */
+  --color-border: #3a3a3a;     /* hairline borders */
+  --color-text: #ffffff;       /* primary text */
+  --color-muted: #e8e8e8;      /* secondary text */
+  --color-faint: #9a9a9a;      /* tertiary text */
+  --color-gold: #d4af37;       /* metallic gold accent */
+  --color-gold-soft: #e6c65a;  /* lighter gold for gradients */
+  --color-gold-deep: #a8842a;  /* deeper gold for gradients */
+
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-space), var(--font-inter), ui-sans-serif, system-ui,
+    sans-serif;
+
+  /* Fluid display sizes */
+  --text-hero: clamp(2.75rem, 7vw, 6rem);
+  --text-section: clamp(2rem, 4.5vw, 3.75rem);
+}
+
+:root {
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  /* Lenis controls scroll; keep native smooth off to avoid conflicts */
+  scroll-behavior: auto;
+}
+
+html,
+body {
+  background-color: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Lenis smooth-scroll integration */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Selection */
+::selection {
+  background: color-mix(in srgb, var(--color-gold) 35%, transparent);
+  color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-deep);
+}
+
+/* ---------- Reusable utilities ---------- */
+
+.gold-text {
+  background: linear-gradient(
+    100deg,
+    var(--color-gold-deep) 0%,
+    var(--color-gold-soft) 45%,
+    var(--color-gold) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hairline {
+  border: 1px solid var(--color-border);
+}
+
+.glass {
+  background: color-mix(in srgb, var(--color-surface) 65%, transparent);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+}
+
+.gold-ring-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-gold) 40%, transparent),
+    0 0 40px -8px color-mix(in srgb, var(--color-gold) 55%, transparent);
+}
+
+/* Grain / vignette overlays applied via components */
+.section-anchor {
+  scroll-margin-top: 96px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
