@@ -44,13 +44,6 @@ html {
   scroll-behavior: auto;
 }
 
-html {
-  /* Base fallback fill; the fixed <Backdrop> paints its layers over this.
-     Keep the opaque color on html ONLY — an opaque body background paints
-     after (over) the negative z-index backdrop and would hide it. */
-  background-color: var(--color-ink);
-}
-
 html,
 body {
   color: var(--color-text);
@@ -59,9 +52,41 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Premium page background applied DIRECTLY to the body — a page background is
+   always painted behind body content, so there are no z-index/stacking traps.
+   Layers (top to bottom): faint tech dot-grid, warm gold glow (top-center),
+   secondary gold glow (lower-right), and a depth gradient (warm → deep black). */
+html {
+  background-color: #0b0b0c;
+}
 body {
-  background-color: transparent;
   overflow-x: hidden;
+  background-color: #0b0b0c;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.5px),
+    radial-gradient(
+      55% 45% at 50% -6%,
+      rgba(212, 175, 55, 0.22),
+      rgba(212, 175, 55, 0.06) 42%,
+      transparent 70%
+    ),
+    radial-gradient(
+      46% 42% at 92% 62%,
+      rgba(212, 175, 55, 0.1),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      #1a160c 0%,
+      #0d0d0d 32%,
+      #0a0a0a 70%,
+      #060606 100%
+    );
+  background-size: 34px 34px, 100% 100%, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed;
+  min-height: 100vh;
 }
 
 /* Lenis smooth-scroll integration */
