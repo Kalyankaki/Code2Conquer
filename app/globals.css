@@ -44,9 +44,15 @@ html {
   scroll-behavior: auto;
 }
 
+html {
+  /* Base fallback fill; the fixed <Backdrop> paints its layers over this.
+     Keep the opaque color on html ONLY — an opaque body background paints
+     after (over) the negative z-index backdrop and would hide it. */
+  background-color: var(--color-ink);
+}
+
 html,
 body {
-  background-color: var(--color-ink);
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -54,6 +60,7 @@ body {
 }
 
 body {
+  background-color: transparent;
   overflow-x: hidden;
 }
 
