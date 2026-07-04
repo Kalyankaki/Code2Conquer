@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Backdrop from "@/components/Backdrop";
 import { site } from "@/lib/content";
 
 const inter = Inter({
@@ -54,7 +55,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${space.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Backdrop />
+        {children}
+      </body>
     </html>
   );
 }
