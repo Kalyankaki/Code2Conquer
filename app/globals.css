@@ -128,9 +128,58 @@ html.lenis body {
   scroll-margin-top: 96px;
 }
 
+/* ---------- Hero ring (CSS/SVG) animations ---------- */
+@keyframes c2c-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes c2c-spin-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes c2c-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+@keyframes c2c-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+.spin-slow {
+  animation: c2c-spin 46s linear infinite;
+  transform-origin: center;
+}
+.spin-mid {
+  animation: c2c-spin-rev 30s linear infinite;
+  transform-origin: center;
+}
+.spin-fast {
+  animation: c2c-spin 18s linear infinite;
+  transform-origin: center;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+  .spin-slow,
+  .spin-mid,
+  .spin-fast {
+    animation: none !important;
   }
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import HeroRing from "@/components/HeroRing";
 import { site } from "@/lib/content";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -12,6 +13,9 @@ export default function Hero() {
       id="hero"
       className="section-anchor relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 text-center"
     >
+      {/* Golden ring centerpiece (CSS/SVG — renders everywhere) */}
+      <HeroRing />
+
       {/* Soft scrim so the headline stays legible over the ring */}
       <div
         aria-hidden
