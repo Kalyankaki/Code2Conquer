@@ -89,20 +89,20 @@ export default function Ring({ quality }: Props) {
         <mesh>
           <torusGeometry args={[2.35, 0.09, 24, seg]} />
           <meshStandardMaterial
-            color={"#4a4a4e"}
+            color={"#5a5a5e"}
             metalness={0.85}
             roughness={0.32}
-            emissive={"#1a1206"}
-            emissiveIntensity={0.6}
+            emissive={"#2a1e08"}
+            emissiveIntensity={0.9}
           />
         </mesh>
-        {/* Faint gold rim */}
+        {/* Gold rim */}
         <mesh>
-          <torusGeometry args={[2.5, 0.012, 12, seg]} />
+          <torusGeometry args={[2.5, 0.02, 12, seg]} />
           <meshStandardMaterial
             color={GOLD}
             emissive={GOLD}
-            emissiveIntensity={0.6}
+            emissiveIntensity={1.4}
             metalness={0.9}
             roughness={0.4}
             toneMapped={false}
@@ -131,18 +131,18 @@ export default function Ring({ quality }: Props) {
             color={GOLD}
             metalness={0.9}
             roughness={0.25}
-            emissive={"#6b5314"}
-            emissiveIntensity={0.5}
+            emissive={GOLD}
+            emissiveIntensity={0.9}
           />
         </mesh>
 
         {/* Inner glowing energy ring */}
         <mesh ref={innerRef}>
-          <torusGeometry args={[1.2, 0.045, 20, seg]} />
+          <torusGeometry args={[1.2, 0.06, 20, seg]} />
           <meshStandardMaterial
             color={GOLD_SOFT}
             emissive={GOLD_SOFT}
-            emissiveIntensity={1.6}
+            emissiveIntensity={2.4}
             metalness={0.2}
             roughness={0.5}
             toneMapped={false}

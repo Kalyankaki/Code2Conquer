@@ -54,8 +54,8 @@ export default function CanvasStage() {
       const el = stageRef.current;
       if (el) {
         const h = window.innerHeight || 1;
-        // Fully visible at top, gone by the time one viewport has scrolled.
-        const p = Math.min(1, Math.max(0, window.scrollY / (h * 0.85)));
+        // Fully visible at the top; fades gently over ~1.3 viewports of scroll.
+        const p = Math.min(1, Math.max(0, window.scrollY / (h * 1.3)));
         el.style.opacity = String(1 - p);
         el.style.visibility = p >= 1 ? "hidden" : "visible";
       }
