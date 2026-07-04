@@ -1,25 +1,26 @@
 import Kicker from "@/components/ui/Kicker";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
+import { site } from "@/lib/content";
 
 const paths = [
   {
     title: "Join",
     blurb: "Students — enroll in a program and start building this term.",
     cta: "Become a member",
-    href: `mailto:hello@code2conquer.org?subject=Join%20Code2Conquer`,
+    href: `mailto:${site.email}?subject=Join%20Code2Conquer`,
   },
   {
     title: "Volunteer",
     blurb: "Mentors — share your skills and shape the next generation.",
     cta: "Mentor with us",
-    href: `mailto:hello@code2conquer.org?subject=Volunteer%20with%20Code2Conquer`,
+    href: `mailto:${site.email}?subject=Volunteer%20with%20Code2Conquer`,
   },
   {
     title: "Partner",
     blurb: "Schools & sponsors — bring a chapter to your community.",
     cta: "Start a chapter",
-    href: `mailto:hello@code2conquer.org?subject=Partner%20with%20Code2Conquer`,
+    href: `mailto:${site.email}?subject=Partner%20with%20Code2Conquer`,
   },
 ];
 

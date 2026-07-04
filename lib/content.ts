@@ -10,7 +10,7 @@ export const site = {
   tagline: "Empowering the Next Generation of Innovators",
   description:
     "A brand-new, student-led STEM initiative teaching coding, AI, robotics, and web development — and growing the next generation of technical leaders.",
-  email: "hello@code2conquer.org", // TODO: your real contact email
+  email: "code2conquer123@gmail.com",
   socials: {
     instagram: "https://instagram.com/", // TODO
     linkedin: "https://linkedin.com/", // TODO
