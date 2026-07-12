@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import Magnetic from "@/components/ui/Magnetic";
 import HeroRing from "@/components/HeroRing";
+import HeroSpotlight from "@/components/HeroSpotlight";
 import { site } from "@/lib/content";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -15,6 +17,9 @@ export default function Hero() {
     >
       {/* Golden ring centerpiece (CSS/SVG — renders everywhere) */}
       <HeroRing />
+
+      {/* Cursor-following light */}
+      <HeroSpotlight />
 
       {/* Soft scrim so the headline stays legible over the ring */}
       <div
@@ -63,12 +68,16 @@ export default function Hero() {
         transition={{ duration: 1, ease: EASE, delay: 0.65 }}
         className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
       >
-        <Button href="#cta" variant="gold">
-          Join Code2Conquer
-        </Button>
-        <Button href="#pillars" variant="ghost">
-          Explore Programs
-        </Button>
+        <Magnetic>
+          <Button href="#cta" variant="gold">
+            Join Code2Conquer
+          </Button>
+        </Magnetic>
+        <Magnetic>
+          <Button href="#pillars" variant="ghost">
+            Explore Programs
+          </Button>
+        </Magnetic>
       </motion.div>
       </div>
 

@@ -131,12 +131,25 @@ html.lenis body {
   background: linear-gradient(
     100deg,
     var(--color-gold-deep) 0%,
-    var(--color-gold-soft) 45%,
-    var(--color-gold) 100%
+    var(--color-gold) 28%,
+    #fff4d6 46%,
+    var(--color-gold) 64%,
+    var(--color-gold-soft) 100%
   );
+  background-size: 220% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: c2c-shimmer 7s ease-in-out infinite;
+}
+@keyframes c2c-shimmer {
+  0%,
+  100% {
+    background-position: 140% center;
+  }
+  50% {
+    background-position: -40% center;
+  }
 }
 
 .hairline {

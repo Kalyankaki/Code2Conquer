@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Kicker from "@/components/ui/Kicker";
 import { Reveal } from "@/components/ui/Reveal";
+import PillarIcon from "@/components/ui/PillarIcon";
 import { pillars } from "@/lib/content";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -44,10 +45,15 @@ export default function Pillars() {
               <div className="absolute -inset-px rounded-2xl bg-[radial-gradient(120%_80%_at_50%_0%,rgba(212,175,55,0.14),transparent_60%)]" />
             </div>
 
-            <span className="font-[family-name:var(--font-display)] text-sm text-[color:var(--color-gold)]/70">
-              {p.tag}
-            </span>
-            <h3 className="mt-4 font-[family-name:var(--font-display)] text-xl font-semibold text-white">
+            <div className="flex items-center justify-between">
+              <span className="grid h-12 w-12 place-items-center rounded-xl border border-[color:var(--color-gold)]/25 bg-[color:var(--color-gold)]/5 text-[color:var(--color-gold)] transition-colors duration-500 group-hover:border-[color:var(--color-gold)]/60">
+                <PillarIcon id={p.id} />
+              </span>
+              <span className="font-[family-name:var(--font-display)] text-sm text-[color:var(--color-gold)]/60">
+                {p.tag}
+              </span>
+            </div>
+            <h3 className="mt-5 font-[family-name:var(--font-display)] text-xl font-semibold text-white">
               {p.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-faint)]">
