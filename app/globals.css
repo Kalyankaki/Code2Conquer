@@ -204,6 +204,27 @@ html.lenis body {
     opacity: 0.9;
   }
 }
+/* Full-width hero wave field — each wave SVG is 200% wide and periodic every
+   50%, so translating by -50% loops seamlessly. Percentage transform on the
+   SVG element is reliable across browsers (unlike transforms on inner <g>). */
+@keyframes wave-flow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.wave-flow-a {
+  animation: wave-flow 22s linear infinite;
+}
+.wave-flow-b {
+  animation: wave-flow 16s linear infinite;
+}
+.wave-flow-c {
+  animation: wave-flow 30s linear infinite;
+}
+
 .spin-slow {
   animation: c2c-spin 46s linear infinite;
   transform-origin: center;
@@ -224,7 +245,10 @@ html.lenis body {
   }
   .spin-slow,
   .spin-mid,
-  .spin-fast {
+  .spin-fast,
+  .wave-flow-a,
+  .wave-flow-b,
+  .wave-flow-c {
     animation: none !important;
   }
 }

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Magnetic from "@/components/ui/Magnetic";
-import HeroRing from "@/components/HeroRing";
+import HeroWaves from "@/components/HeroWaves";
 import HeroSpotlight from "@/components/HeroSpotlight";
 import { site } from "@/lib/content";
 
@@ -15,8 +15,8 @@ export default function Hero() {
       id="hero"
       className="section-anchor relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 text-center"
     >
-      {/* Golden ring centerpiece (CSS/SVG — renders everywhere) */}
-      <HeroRing />
+      {/* Full-width flowing wave field (CSS/SVG — renders everywhere) */}
+      <HeroWaves />
 
       {/* Cursor-following light */}
       <HeroSpotlight />

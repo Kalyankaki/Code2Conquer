@@ -11,7 +11,7 @@ export default function Mission() {
   return (
     <section
       id="mission"
-      className="section-anchor relative z-10 mx-auto max-w-4xl px-6 py-32 text-center md:py-44"
+      className="section-anchor relative z-10 mx-auto max-w-4xl px-6 py-16 text-center md:py-24"
     >
       <div className="flex justify-center">
         <Kicker>Our Mission</Kicker>

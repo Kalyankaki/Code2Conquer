@@ -28,7 +28,7 @@ export default function CTA() {
   return (
     <section
       id="cta"
-      className="section-anchor relative z-10 mx-auto max-w-5xl px-6 pb-40 pt-32 text-center md:pt-44"
+      className="section-anchor relative z-10 mx-auto max-w-5xl px-6 pb-24 pt-16 text-center md:pt-24"
     >
       <div className="flex justify-center">
         <Kicker>Get Involved</Kicker>

@@ -43,7 +43,7 @@ export default function Timeline() {
     <section
       id="timeline"
       ref={section}
-      className="section-anchor relative z-10 mx-auto max-w-6xl px-6 py-32 md:py-44"
+      className="section-anchor relative z-10 mx-auto max-w-6xl px-6 py-16 md:py-24"
     >
       <div className="flex flex-col items-center text-center">
         <Kicker>Roadmap</Kicker>
